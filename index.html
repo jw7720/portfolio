@@ -206,7 +206,7 @@
     </p>
     <ul>
       <li><b>Isaac Sim 디지털 트윈 구축</b>에 강점 — 설계→URDF→USD 변환, 센서·물리·제어·ROS2 연동으로 실물 도입 전 검증 환경을 구현.</li>
-      <li>자율주행 스택(RTAB-Map SLAM · Nav2 · TEB · 도킹)을 시뮬레이션과 <b>실물 AMR</b> 양쪽에서 구현·적용.</li>
+      <li>자율주행 스택(SLAM · Nav2 · 경로 계획 · 도킹)을 시뮬레이션과 <b>실물 AMR</b> 양쪽에서 구현·적용.</li>
       <li><b>Sim-to-Real</b> — 시뮬레이션에서 검증한 동작을 실물 로봇으로 연동하는 흐름을 다뤄봄.</li>
       <li>현재 4축 로봇 <b>강화학습(RL)</b> 테스트와 카메라 캘리브레이션 작업을 진행 중.</li>
       <li>데이터 분석(EDA·통계·머신러닝) 배경으로 센서 데이터·결과를 정량 분석·검증.</li>
@@ -229,8 +229,8 @@
         <h3>Robot Software</h3>
         <div class="skill-row"><span class="lv">◎</span><span class="nm">로봇 노드·통신 구현</span><span class="note">ROS2(Humble)·launch·TF</span></div>
         <div class="skill-row"><span class="lv">◎</span><span class="nm">자율주행 (경로 계획·주행)</span><span class="note">목적지·웨이포인트 주행 · Nav2</span></div>
-        <div class="skill-row"><span class="lv">◎</span><span class="nm">지도 작성·위치 추정 (SLAM)</span><span class="note">매핑·루프 클로저·로컬라이제이션 · RTAB-Map</span></div>
-        <div class="skill-row"><span class="lv">○</span><span class="nm">경로 추종·충돌 회피</span><span class="note">장애물 회피 모션 계획 · TEB·cuRobo</span></div>
+        <div class="skill-row"><span class="lv">◎</span><span class="nm">지도 작성·위치 추정 (SLAM)</span><span class="note">매핑·루프 클로저·로컬라이제이션</span></div>
+        <div class="skill-row"><span class="lv">○</span><span class="nm">경로 추종·충돌 회피</span><span class="note">장애물 회피 모션 계획</span></div>
         <div class="skill-row"><span class="lv">○</span><span class="nm">로봇 팔 제어</span><span class="note">매니퓰레이터 모션 제어 · MoveIt</span></div>
       </div>
       <div class="skill-card">
@@ -279,11 +279,11 @@
       <div class="proj">
         <div class="proj-head"><span class="proj-num">02</span><h3>Isaac Sim 지게차(Forklift) AMR 주행 테스트 환경 구축</h3></div>
         <div class="proj-date">📅 2026.01 ~ 2026.06</div>
-        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">Nav2</span><span class="tag">TEB</span><span class="tag">RTAB-Map</span><span class="tag">AprilTag Docking</span></div>
+        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">Nav2</span></div>
         <p class="lead">실물 지게차 AMR이 도입되기 전에 미리 검증할 수 있는 Isaac Sim 시뮬레이션 환경을 구축.</p>
         <ul>
           <li><b>시뮬레이션 환경 구성</b>: 실제 창고 환경을 Isaac Sim 내부에 구성, 카메라·LiDAR·바퀴 등 센서/구동부 세팅, 물리(physics) 속성 구성.</li>
-          <li><b>제어/주행 연동</b>: controller·planner(Nav2/TEB)·RTAB-Map SLAM·AprilTag 도킹을 ROS2로 연동해 실물 없이 주행·도킹 테스트.</li>
+          <li><b>제어/주행 연동</b>: controller·planner(Nav2)·SLAM·도킹을 ROS2로 연동해 실물 없이 주행·도킹 테스트.</li>
           <li><b>관제 연동</b>: 관제 UI ↔ Backend ↔ AMR Backend(ROS2) ↔ Isaac Sim 4-Tier 아키텍처 연동.</li>
           <li><b>설계 → 시뮬 자산 변환 (프로젝트 후반 진행)</b>: SolidWorks 설계에서 URDF를 추출하고 USD로 변환해 로봇 모델 제작. 설계 자료 입수가 지연되어 마지막 단계에 진행됐고, 실제 설계 파일 기반 테스트까지는 진행하지 못함.</li>
         </ul>
@@ -308,13 +308,13 @@
       </div>
 
       <div class="proj">
-        <div class="proj-head"><span class="proj-num">03</span><h3>Nova2 팔레타이징 디지털 트윈 (cuRobo 물체 회피)</h3></div>
+        <div class="proj-head"><span class="proj-num">03</span><h3>Nova2 팔레타이징 디지털 트윈 (물체 회피)</h3></div>
         <div class="proj-date">📅 2026.01 ~ 2026.02</div>
-        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">Dobot Nova2</span><span class="tag">USD</span><span class="tag">ROS2</span><span class="tag">cuRobo</span><span class="tag">Digital Twin</span></div>
+        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">Dobot Nova2</span><span class="tag">USD</span><span class="tag">ROS2</span><span class="tag">Digital Twin</span></div>
         <p class="lead">6축 매니퓰레이터 Dobot Nova2를 이용한 팔레타이징 작업의 Isaac Sim 디지털 트윈을 구축하고 충돌 회피 모션을 검증.</p>
         <ul>
           <li>작업 환경·Nova2 로봇·박스를 USD로 제작하고 Isaac Sim 씬 구성, ROS2로 연결해 디지털 트윈 연동.</li>
-          <li>cuRobo 기반 충돌 회피(물체 회피) 모션 플래닝 적용, 박스 적재 가능성(placeability) 판정 로직 연계.</li>
+          <li>충돌 회피(물체 회피) 모션 플래닝 적용, 박스 적재 가능성(placeability) 판정 로직 연계.</li>
           <li><b>의의</b>: Nova2 매니퓰레이터 작업을 시뮬레이션 디지털 트윈에서 사전 검증하는 파이프라인 경험.</li>
         </ul>
       </div>
@@ -322,11 +322,11 @@
       <div class="proj">
         <div class="proj-head"><span class="proj-num">04</span><h3>Mecanum Wheel AMR — Isaac Sim 디지털 트윈 + 실물 자율주행</h3><span class="badge">Sim-to-Real</span></div>
         <div class="proj-date">📅 2025.10 ~ 2026.01</div>
-        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">Nav2</span><span class="tag">RTAB-Map</span><span class="tag">ZED</span><span class="tag">Jetson</span></div>
+        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">Nav2</span><span class="tag">ZED</span><span class="tag">Jetson</span></div>
         <p class="lead">메카넘 휠 AMR을 Isaac Sim에서 구현하고, 실물 로봇으로 자율주행까지 이어간 프로젝트.</p>
         <ul>
           <li><b>시뮬레이션 구현</b>: 설계 → URDF → USD 변환, Isaac Sim에서 메카넘 휠이 물리적으로 구르도록 전 과정 구현. ROS2로 카메라·LiDAR 연동해 간단한 자율주행까지 시뮬레이션.</li>
-          <li><b>실물 자율주행(Sim-to-Real)</b>: 실물 메카넘 AMR에서 ZED VIO 측위·RTAB-Map SLAM·Nav2 자율주행 구동. 연산 부하 분산을 위해 제어박스/센서박스(Jetson)로 하드웨어 분리.</li>
+          <li><b>실물 자율주행(Sim-to-Real)</b>: 실물 메카넘 AMR에서 ZED VIO 측위·SLAM·Nav2 자율주행 구동. 연산 부하 분산을 위해 제어박스/센서박스(Jetson)로 하드웨어 분리.</li>
           <li><b>사람 감지 &amp; 안전 계층</b>: 4채널 ZED 사람 감지(Person Detect)와 Nav2 독립 안전 계층(Collision Monitor)으로 사람 감지 시 감속·정지.</li>
           <li><b>현장 설비 연동</b>: 팔레타이징 설비와 AMR을 TCP 소켓으로 연동해 하나의 작업 흐름으로 동작.</li>
         </ul>
