@@ -108,6 +108,7 @@
     border: 1px solid var(--border); border-radius: var(--radius);
     padding: 22px 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
   }
+  .exp-card + .exp-card { margin-top: 14px; }
   .exp-card .co { font-size: 1.15rem; font-weight: 700; }
   .exp-card .pos { color: var(--accent); font-weight: 600; font-size: 0.92rem; }
   .exp-card .date { color: var(--text-dim); font-family: 'JetBrains Mono'; font-size: 0.85rem; }
@@ -254,10 +255,17 @@
     <div class="section-title">Work Experience</div>
     <div class="exp-card">
       <div>
+        <div class="co">제이엔이웍스(시스텍) <span class="pos">· R&amp;D S/W 연구원</span></div>
+      </div>
+      <div class="date">2026.08 ~ 재직 중</div>
+      <p>라인스캐너 기반 시편 스캔부터 <b style="color:var(--text)">Isaac Sim 실링 경로 생성·cuRobo 충돌 회피 경로 계획</b>, 공압·로봇 연동 및 통합 제어 프로세스 구축 담당.</p>
+    </div>
+    <div class="exp-card">
+      <div>
         <div class="co">(주)에이아이코리아 <span class="pos">· R&amp;D S/W 연구원</span></div>
       </div>
-      <div class="date">2025.07 ~ 재직 중</div>
-      <p>AMR(메카넘·지게차)·매니퓰레이터의 <b style="color:var(--text)">Isaac Sim 디지털 트윈·시뮬레이션 환경 구축</b>과 실물 AMR 자율주행·Sim-to-Real 개발 담당. 아래 프로젝트가 실무 수행 내역입니다.</p>
+      <div class="date">2025.07 ~ 2026.08</div>
+      <p>AMR(메카넘·지게차)·매니퓰레이터의 <b style="color:var(--text)">Isaac Sim 디지털 트윈·시뮬레이션 환경 구축</b>과 실물 AMR 자율주행·Sim-to-Real 개발 담당.</p>
     </div>
   </div>
 </section>
@@ -268,7 +276,42 @@
     <div class="projects">
 
       <div class="proj">
-        <div class="proj-head"><span class="proj-num">01</span><h3>로봇 카메라 캘리브레이션 &amp; 4축 로봇 강화학습</h3><span class="badge">진행 중</span></div>
+        <div class="proj-head"><span class="proj-num">01</span><h3>협동로봇 실링(Sealant) 자동화 — 레이저 스캔 → cuRobo 경로 생성 → 실기 도포</h3><span class="badge">Sim-to-Real</span></div>
+        <div class="proj-date">📅 2026.09 ~ 진행 중</div>
+        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">cuRobo</span><span class="tag">RB16-900E</span><span class="tag">Line Scanner</span><span class="tag">Pneumatic Control</span><span class="tag">Python</span></div>
+        <p class="lead">시편의 3D 형상 취득부터 충돌 회피 경로 생성, 실제 로봇 도포까지 연결되는 협동로봇 실링 자동화 프로세스를 구축했습니다.</p>
+        <ul>
+          <li><b>전체 공정</b>: 시편을 라인 스캐너로 스캔 → 데이터를 Isaac Sim에 업로드 → 실링 경로 생성 → cuRobo 알고리즘으로 충돌 회피 경로 생성 → 실제 로봇 구동으로 이어지는 프로세스를 구현했습니다.</li>
+          <li><b>경로 생성·검증</b>: 라인 스캔 포인트클라우드로 시편 형상을 Isaac Sim에 재현하고, 작업 구간에 맞춘 실링 경로와 충돌 없는 로봇 궤적을 생성·검증했습니다.</li>
+          <li><b>통합 제어·실기 테스트</b>: 공압 장치와 실링 토출기부터 라인 스캐너, Isaac Sim, cuRobo, 실제 로봇까지 직접 설정·연동하고 하나의 프로세스에서 제어해 실제 도포 동작을 확인했습니다.</li>
+        </ul>
+        <div class="proj-videos">
+          <div class="vid-item">
+            <video src="videos/sealing-robot-process.mp4" controls preload="metadata" playsinline muted></video>
+            <div class="vid-cap"><b>실제 협동로봇 실링 도포 테스트</b></div>
+          </div>
+          <div class="vid-item">
+            <img src="videos/sealing-scan-isaacsim.png" alt="Isaac Sim에서 재현한 라인 스캔 포인트클라우드">
+            <div class="vid-cap"><b>라인 스캔 포인트클라우드 기반 시편 재현 (Isaac Sim)</b></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="proj">
+        <div class="proj-head"><span class="proj-num">02</span><h3>LiDAR 가상 센서 구현 및 드론 탐지 검증</h3><span class="badge">Sensor Simulation</span></div>
+        <div class="proj-date">📅 2026.08</div>
+        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">RTX LiDAR</span><span class="tag">Point Cloud</span><span class="tag">Python</span></div>
+        <p class="lead">Isaac Sim RTX LiDAR로 전방 섹터형 가상 센서를 구성하고, 거리와 자세에 따라 소형 드론이 포인트클라우드에 형성되는 특성과 탐지 가능 범위를 검증했습니다.</p>
+        <ul>
+          <li><b>가상 센서 구성</b>: 공개 제원과 스캔 패턴을 바탕으로 LiDAR 모델을 구현하고 기준 센서와 비교했습니다.</li>
+          <li><b>탐지 검증</b>: 거리·자세 조건별 테스트를 자동화해 포인트클라우드와 RGB 데이터를 수집하고 탐지 결과를 비교했습니다.</li>
+        </ul>
+      </div>
+
+
+      <div class="proj">
+        <div class="proj-head"><span class="proj-num">03</span><h3>로봇 카메라 캘리브레이션 &amp; 4축 로봇 강화학습</h3><span class="badge">진행 중</span></div>
         <div class="proj-date">📅 2026.06 ~ 진행 중</div>
         <div class="tags"><span class="tag">Isaac Lab</span><span class="tag">Isaac Sim</span><span class="tag">RL</span><span class="tag">Camera Calibration</span><span class="tag">Mixed Palletizing</span><span class="tag">Python</span></div>
         <p class="lead">카메라 캘리브레이션으로 비전-로봇 좌표를 정합하고, Mixed Palletizing(혼적 적재)용 4축 산업용 로봇을 Isaac Lab에서 강화학습(RL) 기반 동작으로 학습·검증하는 파이프라인을 구축 중.</p>
@@ -281,7 +324,7 @@
       </div>
 
       <div class="proj">
-        <div class="proj-head"><span class="proj-num">02</span><h3>Isaac Sim 지게차(Forklift) AMR 주행 테스트 환경 구축</h3></div>
+        <div class="proj-head"><span class="proj-num">04</span><h3>Isaac Sim 지게차(Forklift) AMR 주행 테스트 환경 구축</h3></div>
         <div class="proj-date">📅 2026.01 ~ 2026.06</div>
         <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">Nav2</span></div>
         <p class="lead">실물 지게차 제작·도입 전에 업체의 실제 창고를 Isaac Sim에 재현해 자율주행·정밀 도킹까지 완성하고, 검증된 ROS2 스택을 실물 지게차로 그대로 이관하는 것을 목표로 한 프로젝트. USD·URDF 제작부터 주행·도킹까지 거의 단독으로 파이프라인을 구축.</p>
@@ -313,7 +356,7 @@
       </div>
 
       <div class="proj">
-        <div class="proj-head"><span class="proj-num">03</span><h3>Dobot Nova2 매니퓰레이터 — 디지털 트윈 &amp; Sim-to-Real</h3><span class="badge">Sim-to-Real</span></div>
+        <div class="proj-head"><span class="proj-num">05</span><h3>Dobot Nova2 매니퓰레이터 — 디지털 트윈 &amp; Sim-to-Real</h3><span class="badge">Sim-to-Real</span></div>
         <div class="proj-date">📅 2026.01 ~ 2026.04</div>
         <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">Dobot Nova2</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">MoveIt</span><span class="tag">Sim-to-Real</span></div>
         <p class="lead">6축 매니퓰레이터 Dobot Nova2를 Isaac Sim 디지털 트윈으로 구축하고, 커스텀 ROS2 브리지로 가상·실물을 동시에 구동하는 Sim-to-Real 구조를 단독으로 구현한 프로젝트.</p>
@@ -340,7 +383,7 @@
       </div>
 
       <div class="proj">
-        <div class="proj-head"><span class="proj-num">04</span><h3>Mecanum Wheel AMR — Isaac Sim 시뮬레이션 + 실물 자율주행</h3><span class="badge">Sim-to-Real</span></div>
+        <div class="proj-head"><span class="proj-num">06</span><h3>Mecanum Wheel AMR — Isaac Sim 시뮬레이션 + 실물 자율주행</h3><span class="badge">Sim-to-Real</span></div>
         <div class="proj-date">📅 2025.10 ~ 2026.01</div>
         <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">Nav2</span><span class="tag">SLAM</span><span class="tag">SAM</span><span class="tag">ZED</span><span class="tag">Odometry</span></div>
         <p class="lead">메카넘 휠 AMR을 Isaac Sim에서 구현해 실물 주행 전 문제 요소를 사전 점검하고, 시뮬레이션에서 완성한 코드를 실물로 이관해 자율주행까지 완료한 프로젝트.</p>
